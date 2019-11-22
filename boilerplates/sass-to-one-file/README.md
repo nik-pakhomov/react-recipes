@@ -1,6 +1,6 @@
-# Webpack dev server
+# Sass support with compilation to one css file
 
-React boilerplate with .jsx support and dev server.
+In this boilerplate all scss-files will be compiled into one _style.css_ file. Unfortunately sourcemaps doesn't work on this approach.
 
 ## How to work with it
 
