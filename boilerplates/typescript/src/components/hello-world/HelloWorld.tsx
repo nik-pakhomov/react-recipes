@@ -9,7 +9,6 @@ export interface Props {
 export default class HelloWorld extends React.Component<Props> {
   render() {
     const title = this.props.title;
-    console.log('afsa');
 
     return <div className="hello-world">{title}</div>;
   }
