@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import "./hello-world.scss";
+import './hello-world.scss';
 
 class HelloWorld extends Component {
   render() {

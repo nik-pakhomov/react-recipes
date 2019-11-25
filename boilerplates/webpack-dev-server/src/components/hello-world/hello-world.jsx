@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import "./hello-world.css";
+import './hello-world.css';
 
 class HelloWorld extends Component {
   render() {

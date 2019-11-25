@@ -1,8 +1,8 @@
-import * as React from "react";
+import * as React from 'react';
 
-import "./styles/App.scss";
+import './styles/App.scss';
 
-import HelloWorld from "./components/hello-world/HelloWorld";
+import HelloWorld from './components/hello-world/HelloWorld';
 
 function App() {
   return (

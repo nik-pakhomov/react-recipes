@@ -1,6 +1,6 @@
-import * as React from "react";
+import * as React from 'react';
 
-import "./HelloWorld.scss";
+import './HelloWorld.scss';
 
 export interface Props {
   title: string;
@@ -9,7 +9,7 @@ export interface Props {
 export default class HelloWorld extends React.Component<Props> {
   render() {
     const title = this.props.title;
-    console.log("afsa");
+    console.log('afsa');
 
     return <div className="hello-world">{title}</div>;
   }
