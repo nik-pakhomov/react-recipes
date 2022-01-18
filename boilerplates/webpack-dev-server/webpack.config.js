@@ -26,9 +26,9 @@ module.exports = {
     ],
   },
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
-    open: true,
     hot: true,
+    open: true,
+    watchFiles: path.join(__dirname, 'dist/*'),
   },
   plugins: [
     new HtmlWebpackPlugin({
