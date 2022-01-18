@@ -2,6 +2,26 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+const isDevMode = process.env.NODE_ENV !== 'production';
+
+function getPlugins(isDevMode) {
+  const plugins = [
+    new HtmlWebpackPlugin({
+      template: './src/public/index.html',
+    }),
+  ];
+
+  if (isDevMode) {
+    plugins.push(
+      new MiniCssExtractPlugin({
+        filename: 'style.css',
+      }),
+    );
+  }
+
+  return plugins;
+}
+
 module.exports = {
   entry: './src/index.jsx',
   output: {
@@ -23,8 +43,7 @@ module.exports = {
       {
         test: /\.(css|scss)$/,
         use: [
-          'style-loader',
-          MiniCssExtractPlugin.loader,
+          isDevMode ? 'style-loader' : MiniCssExtractPlugin.loader,
           'css-loader',
           'sass-loader',
         ],
@@ -32,16 +51,9 @@ module.exports = {
     ],
   },
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
-    open: true,
     hot: true,
+    open: true,
+    watchFiles: path.join(__dirname, 'dist/*'),
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: './src/public/index.html',
-    }),
-    new MiniCssExtractPlugin({
-      filename: 'style.css',
-    }),
-  ],
+  plugins: getPlugins(isDevMode),
 };
